@@ -1,6 +1,6 @@
 public class Filme implements Classificavel {
     @Override 
-    int getClassificacao() {
+    public int getClassificacao() {
         return 8;
     }
 }
