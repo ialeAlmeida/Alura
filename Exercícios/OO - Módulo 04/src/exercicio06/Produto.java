@@ -23,7 +23,7 @@ public class Produto implements Vendavel {
     @Override
     public void calculaPrecoTotal() {
         precoTotal = preco * qntdComprada;
-        System.out.println("O preço total total do produto sairá por R$" + precoTotal);
+        System.out.println("O preço total total do " + nome + " sairá por R$" + precoTotal);
     }    
 
     @Override
@@ -52,10 +52,14 @@ public class Produto implements Vendavel {
 
     }
 
-    public static void main(String[] args) {
-        Produto p = new Produto("Caderno", 11.65, 1);
-        p.calculaPrecoTotal();
-        p.aplicaDesconto();
-        
-    }
+    /*
+     *  + Para teste +
+        * public static void main(String[] args) {
+            Produto p = new Produto("Caderno", 11.65, 1);
+            p.calculaPrecoTotal();
+            p.aplicaDesconto();
+            
+        }
+     */
+    
 }
