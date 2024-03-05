@@ -14,6 +14,7 @@ public class Audio {
     protected ArrayList<String> comentarios;
     protected ArrayList<Double> avaliacoes;
 
+
     //sobrecarga de construtor
     public Audio(String nome, String autor, String produtor, double tempoDeReproducao, boolean disponivelNoSpotify, boolean disponivelNoYoutube) {
         this.nome = nome;
@@ -87,47 +88,6 @@ public class Audio {
     public int getTotalAvaliacoes() {
         return totalAvaliacoes;
     }
-
-    public void menu() {
-        System.out.println("""
-                Escolha uma das opções abaixo:
-
-                1 - Curtir 
-                2 - Comentar
-                3 - Ver curtidas e comentários
-                4 - Avaliar 
-                5 - Ver avaliações
-                6 - Exibir ficha técnica
-                7 - Sair
-                """);
-        
-        int resposta = s.nextInt();
-
-        switch (resposta) {
-            case 1:
-                curteAudio();
-                break;
-            case 2: 
-                comentaAudio();
-                break;
-            case 3:
-                System.out.println("Total de curtidas: " + getTotalCurtidas());
-                System.out.println("Comentários: ");
-                mostraComentarios();
-                break;
-            case 4: 
-                avaliaAudio();
-                break;
-            case 5: 
-                System.out.println("Avaliações: ");
-                mostraAvaliacoes();
-                break;
-            case 6: 
-                exibeFichaTecnica();
-            default:
-                break;
-        }
-    }
             
     Scanner s = new Scanner(System.in);
 
@@ -148,9 +108,10 @@ public class Audio {
     }
 
     public void comentaAudio(){
-        System.out.println("Digite seu comentário:");
+        System.out.println("Digite seu comentário: ");
         String comentario = s.nextLine();
         
+        ArrayList<String> comentarios = new ArrayList<String>();
         comentarios.add(comentario);
         totalComentarios++;
     }
@@ -162,9 +123,10 @@ public class Audio {
     }
 
     public void avaliaAudio() {
-        System.out.println("Digite sua avaliação de 1 a 5:");
+        System.out.println("Digite sua avaliação de 1 a 5: ");
         double avaliacao = s.nextDouble();
 
+        ArrayList<Double> avaliacoes = new ArrayList<Double>();
         avaliacoes.add(avaliacao);
         totalAvaliacoes++;
     }
@@ -174,5 +136,61 @@ public class Audio {
             System.out.println(i);
         }
     }
+
+    public void menu() {
+        System.out.println("""
+                Escolha uma das opções abaixo:
+
+                1 - Curtir 
+                2 - Comentar
+                3 - Ver curtidas e comentários
+                4 - Avaliar 
+                5 - Ver avaliações
+                6 - Exibir ficha técnica
+                7 - Sair
+                """);
+                int resposta = s.nextInt();
+
+        while(resposta != 7) {
+            System.out.println("""
+                Escolha uma das opções abaixo:
+
+                1 - Curtir 
+                2 - Comentar
+                3 - Ver curtidas e comentários
+                4 - Avaliar 
+                5 - Ver avaliações
+                6 - Exibir ficha técnica
+                7 - Sair
+                """);
+                resposta = s.nextInt();
+
+                switch (resposta) {
+                    case 1:
+                        curteAudio();
+                        break;
+                    case 2: 
+                        comentaAudio();
+                        break;
+                    case 3:
+                        System.out.println("Total de curtidas: " + getTotalCurtidas());
+                        System.out.println("Comentários: ");
+                        mostraComentarios();
+                        break;
+                    case 4: 
+                    //PEGA
+                        avaliaAudio();
+                        break;
+                    case 5: 
+                        System.out.println("Avaliações: ");
+                        mostraAvaliacoes();
+                        break;
+                    case 6: 
+                        exibeFichaTecnica();
+                    default:
+                        break;
+                }
+            }  
+        }
 }
 
