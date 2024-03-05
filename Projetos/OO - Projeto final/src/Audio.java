@@ -8,15 +8,11 @@ public class Audio {
     protected double tempoDeReproducao;
     protected boolean disponivelNoSpotify;
     protected boolean disponivelNoYoutube;
-    //novos atributos
     protected int totalCurtidas;
     protected int totalComentarios;
     protected int totalAvaliacoes;
     protected ArrayList<String> comentarios;
-    protected ArrayList<String> avaliacoes;
-    //FAZER GETTERS E STTERS DOS NOVOS ATRBUTOS, MAS NÃO ACRESCENTAR NOS CONSTRUTORES
-    //pensa em um atributo id
-
+    protected ArrayList<Double> avaliacoes;
 
     //sobrecarga de construtor
     public Audio(String nome, String autor, String produtor, double tempoDeReproducao, boolean disponivelNoSpotify, boolean disponivelNoYoutube) {
@@ -54,9 +50,6 @@ public class Audio {
     public String getAutor() {
         return autor;
     }
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
 
     public String getProdutor() {
         return produtor;
@@ -67,9 +60,6 @@ public class Audio {
 
     public double getTempoDeReproducao() {
         return tempoDeReproducao;
-    }
-    public void setTempoDeReproducao(int tempoDeReproducao) {
-        this.tempoDeReproducao = tempoDeReproducao;
     }
 
     public boolean getDisponivelNoSpotify() {
@@ -86,6 +76,59 @@ public class Audio {
         this.disponivelNoYoutube = disponivelNoYoutube;
     }
 
+    public int getTotalCurtidas() {
+        return totalCurtidas;
+    }
+
+    public int getTotalComentarios() {
+        return totalComentarios;
+    }
+
+    public int getTotalAvaliacoes() {
+        return totalAvaliacoes;
+    }
+
+    public void menu() {
+        System.out.println("""
+                Escolha uma das opções abaixo:
+
+                1 - Curtir 
+                2 - Comentar
+                3 - Ver curtidas e comentários
+                4 - Avaliar 
+                5 - Ver avaliações
+                6 - Exibir ficha técnica
+                7 - Sair
+                """);
+        
+        int resposta = s.nextInt();
+
+        switch (resposta) {
+            case 1:
+                curteAudio();
+                break;
+            case 2: 
+                comentaAudio();
+                break;
+            case 3:
+                System.out.println("Total de curtidas: " + getTotalCurtidas());
+                System.out.println("Comentários: ");
+                mostraComentarios();
+                break;
+            case 4: 
+                avaliaAudio();
+                break;
+            case 5: 
+                System.out.println("Avaliações: ");
+                mostraAvaliacoes();
+                break;
+            case 6: 
+                exibeFichaTecnica();
+            default:
+                break;
+        }
+    }
+            
     Scanner s = new Scanner(System.in);
 
     public void exibeFichaTecnica() {
@@ -118,35 +161,18 @@ public class Audio {
         }
     }
 
-    //fazer métodos:
-    //avalia
-    //mostraAvaliacoes
+    public void avaliaAudio() {
+        System.out.println("Digite sua avaliação de 1 a 5:");
+        double avaliacao = s.nextDouble();
 
-    public void menu() {
-        System.out.println("""
-                Escolha uma das opções abaixo:
-
-                1 - Curtir 
-                2 - Comentar
-                3 - Ver curtidas e comentários
-                4 - Avaliar 
-                5 - Ver avaliações
-                6 - Exibir ficha técnica
-                7 - Sair
-                """);
-        
-        int resposta = s.nextInt();
-
-        switch (resposta) {
-            case 1:
-                //metodo curteAudio
-                break;
-            case 2: 
-                //método comentaAudio
-                break;
-            //case ...
-            default:
-                break;
+        avaliacoes.add(avaliacao);
+        totalAvaliacoes++;
+    }
+    
+    public void mostraAvaliacoes() {
+        for (int i = 0; i <= avaliacoes.size(); i++) {
+            System.out.println(i);
         }
     }
 }
+
