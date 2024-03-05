@@ -1,7 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        Audio a = new Audio("U and me", 3.14, true, true);
-        a.exibeFichaTecnica();
+        Audio a = new Audio("Não sou demais", "Luisa Sonza", "Sony Muisc", 2.48, true, true);
+        // a.mostraFichaTecnica();
+        // a.curteAudio();
+         a.comentaAudio();
+        // a.mostraComentarios();
+        // a.avaliaAudio();
+        // a.mostraAvaliacoes();
+         a.menu();
     }
 
 }

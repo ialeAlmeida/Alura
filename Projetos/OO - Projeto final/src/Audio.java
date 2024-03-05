@@ -11,8 +11,8 @@ public class Audio {
     protected int totalCurtidas;
     protected int totalComentarios;
     protected int totalAvaliacoes;
-    protected ArrayList<String> comentarios;
-    protected ArrayList<Double> avaliacoes;
+    protected ArrayList<String> comentarios = new ArrayList<String>();
+    protected ArrayList<Double> avaliacoes = new ArrayList<Double>();
 
 
     //sobrecarga de construtor
@@ -91,7 +91,7 @@ public class Audio {
             
     Scanner s = new Scanner(System.in);
 
-    public void exibeFichaTecnica() {
+    public void mostraFichaTecnica() {
         System.out.println(String.format("""
                    --- Ficha Técnica ---
                 Nome:       %s
@@ -111,14 +111,13 @@ public class Audio {
         System.out.println("Digite seu comentário: ");
         String comentario = s.nextLine();
         
-        ArrayList<String> comentarios = new ArrayList<String>();
         comentarios.add(comentario);
         totalComentarios++;
     }
 
     public void mostraComentarios() {
-        for (int i = 0; i <= comentarios.size(); i++) {
-            System.out.println(i);
+        for (int i = 0; i < comentarios.size(); i++) {
+            System.out.println(comentarios.get(i));
         }
     }
 
@@ -126,14 +125,13 @@ public class Audio {
         System.out.println("Digite sua avaliação de 1 a 5: ");
         double avaliacao = s.nextDouble();
 
-        ArrayList<Double> avaliacoes = new ArrayList<Double>();
         avaliacoes.add(avaliacao);
         totalAvaliacoes++;
     }
     
     public void mostraAvaliacoes() {
-        for (int i = 0; i <= avaliacoes.size(); i++) {
-            System.out.println(i);
+        for (int i = 0; i < avaliacoes.size(); i++) {
+            System.out.println(avaliacoes.get(i));
         }
     }
 
@@ -165,32 +163,25 @@ public class Audio {
                 """);
                 resposta = s.nextInt();
 
-                switch (resposta) {
-                    case 1:
-                        curteAudio();
-                        break;
-                    case 2: 
-                        comentaAudio();
-                        break;
-                    case 3:
-                        System.out.println("Total de curtidas: " + getTotalCurtidas());
-                        System.out.println("Comentários: ");
-                        mostraComentarios();
-                        break;
-                    case 4: 
-                    //PEGA
-                        avaliaAudio();
-                        break;
-                    case 5: 
-                        System.out.println("Avaliações: ");
-                        mostraAvaliacoes();
-                        break;
-                    case 6: 
-                        exibeFichaTecnica();
-                    default:
-                        break;
+                if (resposta == 1) {
+                    curteAudio(); 
+                } if (resposta == 2) {
+                    comentaAudio();
+                } if (resposta == 3) {
+                    System.out.println("Total de curtidas: " + getTotalCurtidas());
+                    System.out.println("Comentários: ");
+                    mostraComentarios();
+                } if (resposta == 4) {
+                    avaliaAudio();
+                } if (resposta == 5) {
+                    System.out.println("Avaliações: ");
+                    mostraAvaliacoes();
+                } else if (resposta == 6) {
+                    mostraFichaTecnica();
                 }
-            }  
+                
         }
+    }  
 }
+
 
