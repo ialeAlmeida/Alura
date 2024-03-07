@@ -11,7 +11,7 @@ public class Audio {
     protected int totalAvaliacoes;
     protected ArrayList<String> comentarios = new ArrayList<String>();
     protected ArrayList<Double> avaliacoes = new ArrayList<Double>();
-
+    protected int totalReproducoes;
 
     //sobrecarga de construtor
     public Audio(String nome, double tempoDeReproducao, boolean disponivelNoSpotify, boolean disponivelNoYoutube) {
@@ -66,16 +66,27 @@ public class Audio {
         return totalAvaliacoes;
     }
             
+    public int getTotalReproducoes() {
+        return totalReproducoes;
+    }
+
+    //demais métodos 
+    public String reproduzAudio() {
+        totalReproducoes++;
+        return "Áudio foi reproduzido";
+    }
+
     Scanner s = new Scanner(System.in);
 
     public void mostraFichaTecnica() {
         System.out.println(String.format("""
                    --- Ficha Técnica ---
                 Nome:       %s
-                Tempo de Reprodução:    %.2f
+                Tempo de reprodução:    %.2f
+                Total de reprodução:    %d 
                 Disponível no Spotify:  %s
                 Disponível no Youtube:  %s
-                """, nome, tempoDeReproducao, disponivelNoSpotify, disponivelNoYoutube));
+                """, nome, tempoDeReproducao, totalReproducoes, disponivelNoSpotify, disponivelNoYoutube));
     }
 
     public void curteAudio() {
@@ -120,7 +131,8 @@ public class Audio {
                 4 - Avaliar 
                 5 - Ver avaliações
                 6 - Exibir ficha técnica
-                7 - Sair
+                7 - Total de reproduções
+                8 - Sair
                 """);
                 int resposta = s.nextInt();
 
@@ -134,7 +146,8 @@ public class Audio {
                 4 - Avaliar 
                 5 - Ver avaliações
                 6 - Exibir ficha técnica
-                7 - Sair
+                7 - Total de reproduções
+                8 - Sair
                 """);
                 resposta = s.nextInt();
 
@@ -151,8 +164,10 @@ public class Audio {
                 } if (resposta == 5) {
                     System.out.println("Avaliações: ");
                     mostraAvaliacoes();
-                } else if (resposta == 6) {
+                } if (resposta == 6) {
                     mostraFichaTecnica();
+                } else if (resposta == 7) {
+                    System.out.println(getTempoDeReproducao());
                 }
                 
         }
