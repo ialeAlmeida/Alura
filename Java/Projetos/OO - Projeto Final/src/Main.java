@@ -8,9 +8,6 @@ public class Main {
         // a.avaliaAudio();
         // a.mostraAvaliacoes();
          a.menu();*/
-
-        Musica m = new Musica(01, "Carnificina", 3.40, true, true);
-        m.registraArtista();
     }
 
 }
