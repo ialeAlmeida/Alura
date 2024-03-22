@@ -12,6 +12,6 @@ public class Pessoa {
 
     @Override 
     public String toString() {
-        return "O nome desta pessoa é " + nome + " e ela tem " + idade + " anos.";
+        return "O nome desta pessoa é " + nome + " e ela tem " + idade + " anos";
     }
 }
