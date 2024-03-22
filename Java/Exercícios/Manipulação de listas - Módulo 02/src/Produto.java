@@ -1,14 +1,14 @@
-import java.util.ArrayList;
-
 public class Produto {
     private String nome;
     private double preco;
-    private int quantidade;
+    private int quantidadeNoEstoque;
  
-    public Produto(String nome, double preco, int quantidade) {
+    public Produto(String nome, double preco, int quantidadeNoEstoque) {
         this.nome = nome;
         this.preco = preco;
-        this.quantidade = quantidade;
+        this.quantidadeNoEstoque
+ = quantidadeNoEstoque
+;
     }
 
     public String getNome() {
@@ -17,8 +17,29 @@ public class Produto {
     public double getPreco() {
         return preco;
     }
-    public int getQuantidade() {
-        return quantidade;
+    public int getQuantidadeNoEstoque() {
+        return quantidadeNoEstoque
+;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+    public void setquantidadeNoEstoque(int quantidadeNoEstoque) {
+        this.quantidadeNoEstoque
+ = quantidadeNoEstoque
+;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("""
+                ---------------------------------
+                Produto:  %s
+                Preço:    %.2f
+                Quantidade no estoque:  %d
+                ---------------------------------
+                """, nome, preco, quantidadeNoEstoque);
     }
     
 }
