@@ -28,6 +28,5 @@ public class Pessoa {
     public boolean getCasado() {
         return casado;
     }
-
     
 }
