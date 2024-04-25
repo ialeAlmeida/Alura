@@ -48,16 +48,12 @@ public class Main {
 
         //----------------------------------------
 
-        var c1 = new Circle(3.8);
+        /*var c1 = new Circle(3.8);
         var c2 = new Circle(10.5);
-        // c1.calcularArea();
-        // c2.calcularArea();
-
+        
         var s1 = new Square(4);
         var s2 = new Square(9.9);
-        // s1.calcularArea();
-        // s2.calcularArea();
-
+        
         var shapes = new ArrayList<Shape>();
         shapes.add(c1);
         shapes.add(c2);
@@ -68,6 +64,42 @@ public class Main {
             shape.calcularArea();
         }
 
-        shapes.forEach(System.out::println);
+        shapes.forEach(System.out::println);*/
+
+        //----------------------------------------
+
+        /*var ba1 = new BankAccount("1", 56);
+        var ba2 = new BankAccount("2", 750);
+        var ba3 = new BankAccount("3", 210.10);
+        var ba4 = new BankAccount("4", 3.4);
+        var ba5 = new BankAccount("5", 15);
+        var ba6 = new BankAccount("6", 45.50);
+        var ba7 = new BankAccount("7", 71);
+
+        var bankAccounts = new ArrayList<BankAccount>();
+        bankAccounts.add(ba1);
+        bankAccounts.add(ba2);
+        bankAccounts.add(ba3);
+        bankAccounts.add(ba4);
+        bankAccounts.add(ba5);
+        bankAccounts.add(ba6);
+        bankAccounts.add(ba7);
+
+        BankAccount bankAccountWithBiggestBalance = null;
+        double biggestBalance = Double.MIN_VALUE;
+
+        for (BankAccount bankAccount : bankAccounts) {
+            if (bankAccount.getBalance() > biggestBalance) {
+                biggestBalance = bankAccount.getBalance();
+                bankAccountWithBiggestBalance = bankAccount;
+            }
+        }
+
+        if (bankAccountWithBiggestBalance != null) {
+            System.out.println("bankAccount com maior saldo: " + bankAccountWithBiggestBalance);
+        } else {
+            System.out.println("Nenhuma bankAccount encontrada.");
+        }*/
+        
     }
 }
