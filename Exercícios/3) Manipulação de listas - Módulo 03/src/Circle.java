@@ -16,6 +16,6 @@ public class Circle implements Shape {
 
     @Override
     public String toString() {
-        return "Radius: " + radius + "and Area: " + area;
+        return "Radius: " + radius + " and Area: " + area;
     }
 }

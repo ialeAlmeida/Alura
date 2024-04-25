@@ -58,7 +58,7 @@ public class Main {
         // s1.calcularArea();
         // s2.calcularArea();
 
-        var shapes = new ArrayList<Shape>;
+        var shapes = new ArrayList<Shape>();
         shapes.add(c1);
         shapes.add(c2);
         shapes.add(s1);
@@ -67,5 +67,7 @@ public class Main {
         for (Shape shape : shapes) {
             shape.calcularArea();
         }
+
+        shapes.forEach(System.out::println);
     }
 }

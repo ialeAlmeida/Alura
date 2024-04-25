@@ -15,6 +15,6 @@ public class Square implements Shape {
 
     @Override
     public String toString() {
-        return "Side: " + side + "and Area: " + area;
+        return "Side: " + side + " and Area: " + area;
     }
 }
