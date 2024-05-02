@@ -8,18 +8,19 @@ A ferramenta permite que o usauário defina seu limite de crédito, cadastre com
 
 ## Requisitos Funcionaus
 
-[ ] O usuário deve poder definir, como primeira ação, seu limite de crédito.
-[ ] O usuário deve poder cadastrar compras com sua descrição e valor.
-[ ] O usuário deve poder realizar as seguintes ações dentro do sistema: 
-    - Cadastrar uma compra
-    - Verificar crédito restante
-    - Verificar compras cadastradas
-    - Encerrar programa
+- [ ] O usuário deve poder definir, como primeira ação, seu limite de crédito.
+- [ ] O usuário deve poder cadastrar compras com sua descrição e valor.
+- [ ] O usuário deve poder realizar as seguintes ações dentro do sistema: 
+      - Cadastrar uma compra
+      - Verificar crédito restante
+      - Verificar compras cadastradas
+      - Encerrar programa
     
 ## Regras de negócio
     
-[ ] Se uma compra utrapassar o limite restante, o usuário deve ser avisado e a compra recusada.
+- [ ] Se uma compra utrapassar o limite restante, o usuário deve ser avisado e a compra recusada.
 
 ## Requisitos Não Funcionais
 
-[ ] Quando o sistema for encerrado, deve imprimir uma lista com as compras realizadas, ordenados poelos valores de maneira crescente. 
+- [ ] Quando o sistema for encerrado, deve imprimir uma lista com as compras realizadas, ordenados
+      pelos valores de maneira crescente. 
