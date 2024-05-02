@@ -1,4 +1,4 @@
-Projeto desenvolvido na NLW Unite | Rocketseat na trilha de Node.js
+Projeto desenvolvido no curso Java: trabalhando com listas e coleções de dados | Alura
 
 # Aplicação de lançamentos de compras com cartão de crédito
 
