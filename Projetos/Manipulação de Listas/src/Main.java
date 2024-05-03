@@ -30,8 +30,6 @@ public class Main {
             } else {
                 System.out.println("Compra negada! Saldo insuficiente.");
                 sair = 0;
-                Collections.sort(cc1.getCompras());
-                System.out.println(cc1.getCompras());
             }
         }
 
